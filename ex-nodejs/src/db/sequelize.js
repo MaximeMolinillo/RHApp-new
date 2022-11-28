@@ -18,7 +18,7 @@ let fonctions=[
 const sequelize = new Sequelize(
     'exerciceRh', //nom de la base de données
     'root', //utilisateur
-    '', //mot de passe
+    'root', //mot de passe
     {
         host: 'localhost',
         dialect: 'mysql'

@@ -5,7 +5,8 @@ export class Worker {
         public firstname: string,
         public sexe: string,
         public birthday: Date,
+        public identifiant: string,
         public type: string,
-        public fonction: Array<string>,
+        public job: string,
     ){}
 }
