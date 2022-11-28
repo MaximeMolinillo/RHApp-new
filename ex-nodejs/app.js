@@ -1,6 +1,9 @@
 const express = require('express');
 const sequelize = require('./src/db/sequelize');
+
 const personnesApi=require('./src/services/personne')
+const fonctionsApi=require('./src/services/fonction')
+
 const cors = require('cors')
 const app = express();
 const port = 3000;
@@ -19,6 +22,8 @@ app.get('/test/:id', (req,res) => {
 })
 
 app.use('/api',personnesApi)
+app.use('/api',fonctionsApi)
+
 
 
 
