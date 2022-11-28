@@ -3,24 +3,24 @@ const router = express.Router();
 const sequelize = require('../db/sequelize');
 
 // select all
-router.get('/personnes', (req, res) => {
-    sequelize.personnesList.findAll().then(resultat => {
+router.get('/fonctions', (req, res) => {
+    sequelize.fonctionsList.findAll().then(resultat => {
         res.json(resultat)
     }).catch(() => {
         res.json({ message: "Erreur" })
     })
 })
 // select 1
-router.get('/personne/:id', (req,res) => {
-    sequelize.personnesList.findByPk(req.params.id).then(resultat => {
+router.get('/fonction/:id', (req,res) => {
+    sequelize.fonctionsList.findByPk(req.params.id).then(resultat => {
         res.json(resultat)
     }).catch(() => {
         res.json({ message: "Erreur !!" })
     })
 })
 //ajouter
-router.post('/personnes', (req,res) => {
-    sequelize.personnesList.create(req.body).then(resultat => {
+router.post('/fonctions', (req,res) => {
+    sequelize.fonctionsList.create(req.body).then(resultat => {
         res.json({ message: "Création réalisée avec succés", resultat })
     }).catch(() => {
         res.json({ message: "Erreur !!" })
@@ -28,13 +28,13 @@ router.post('/personnes', (req,res) => {
 
 })
 //modifier
-router.put('/personne/:id', (req,res) => {
-    const personneId = req.params.id
+router.put('/fonction/:id', (req,res) => {
+    const fonctionId = req.params.id
     sequelize.Participant.update(req.body,
         {
-            where: { id: personneId }
+            where: { id: fonctionId }
         }).then(() => {
-            sequelize.personnesList.findByPk(personneId).then(resultat => {
+            sequelize.fonctionsList.findByPk(fonctionId).then(resultat => {
                 res.json({ message: "Modification réalisée avec succés", resultat })
             }).catch(() => {
                 res.json({ message: "Erreur !!" })
@@ -44,10 +44,10 @@ router.put('/personne/:id', (req,res) => {
         })
 })
 // supprimer
-router.delete('/personne/:id', (req,res) => {
-    const personneId = req.params.id
-    sequelize.personnesList.destroy({
-        where: { id: personneId }
+router.delete('/fonction/:id', (req,res) => {
+    const fonctionId = req.params.id
+    sequelize.fonctionsList.destroy({
+        where: { id: fonctionId }
     }).then(() => {
         res.status(204).json({ message: "Suppression réalisée avec succés" })
     }).catch(() => {
