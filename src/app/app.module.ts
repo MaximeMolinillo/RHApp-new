@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
+import { RhModule } from './rh/rh.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AuthComponent } from './auth/auth.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule
+    RouterModule,
+    RhModule
   ],
   providers: [],
   bootstrap: [AppComponent]

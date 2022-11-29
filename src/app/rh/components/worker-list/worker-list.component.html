@@ -1,0 +1,25 @@
+<div class="worker-list" >
+    <h2>Liste des employés</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Sexe</th>
+                <th>Date de naissance</th>
+                <th>Type</th>
+                <th>Fonction</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let worker of workers$ | async">
+                <th>{{worker.nom}}</th>
+                <th>{{worker.prenom}}</th>
+                <th>{{worker.sexe}}</th>
+                <th>{{worker.date}}</th>
+                <th>{{worker.type}}</th>
+                <th>{{worker.job}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
