@@ -1,1 +1,24 @@
-<p>auth works!</p>
+<div class="row">
+    <div class="col s12 m4 offset-m4"> 
+      <div class="card hoverable">      
+      <div class="card-content center">
+        <span class="card-title">Page de connexion</span>
+        <p>{{message}}</p>
+        <form #loginForm="ngForm">
+          <div> 
+            <label for="username">Login</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" required>
+          </div>
+          
+          <div> 
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required>
+          </div>
+          <div class="card-action center">
+            <button [disabled]="!loginForm.form.valid" (click)="login()">Se connecter</button>
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
