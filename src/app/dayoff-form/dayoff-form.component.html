@@ -1,0 +1,71 @@
+<form *ngIf="dayoff" (ngSubmit)="onSubmitDayOff()" #dayoffForm="ngForm">
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card-panel">
+                <!-- date debut -->
+                <div class="form-group">
+                    <label for="start">Date de début</label>
+                    <input type="date" class="form-control" required [(ngModel)]="dayoff.start"
+                        #debut="ngModel" name="debut">
+                </div>
+                <div [hidden]="debut.valid || debut.pristine" class="card-panel red accent-1">
+                   Date erroné ou vide
+                </div>
+
+                <!-- date fin -->
+                <div class="form-group">
+                    <label for="end">Date de fin</label>
+                    <input type="date" class="form-control" required [(ngModel)]="dayoff.end" #fin="ngModel"
+                        name="fin" >
+                </div>
+                <div [hidden]="fin.valid || fin.pristine" class="card-panel red accent-1">
+                    Date erroné ou vide
+                </div>
+
+
+                <!-- durée -->
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="numberOfDays">Durée des congés</label>
+                        <input type="number" class="form-control" required [(ngModel)]="dayoff.numberOfDays" #duree="ngModel"
+                            name="duree" pattern="[0-9 ]*">
+                    </div>
+                    <div [hidden]="duree.valid || duree.pristine" class="card-panel red accent-1">
+                        Durée erroné ou vide
+                    </div>
+                </div>
+
+                <!-- état -->
+                <div class="form-group">
+                    <label for="state">Etat</label>
+                    <input type="text" class="form-control" 
+                        [(ngModel)]="dayoff.state" #etat="ngModel" name="etat">
+                </div>
+                <div [hidden]="etat.valid || etat.pristine" class="card-panel red accent-1">
+                    Etat de naissance erroné
+                </div>
+
+                <!-- Identifiant -->
+                <div class="form-group">
+                    <label for="worker"></label>
+                    <input type="number" class="form-control" 
+                        [(ngModel)]="dayoff.worker" #personne="ngModel" name="personne">
+                </div>
+                <div [hidden]="personne.valid || personne.pristine" class="card-panel red accent-1">
+                    Personne erroné
+                </div>
+
+            
+
+                <!-- Submit button -->
+                <div class="divider"></div>
+                <div class="section center">
+                    <button type="submit" class="waves-effect waves-light btn" [disabled]="!dayoffForm.form.valid">
+                        Valider</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+<h3 *ngIf="dayoff" class="center">Aucun congés à modifier...</h3>

@@ -13,6 +13,9 @@ import { WorkerFormComponent } from './worker-form/worker-form.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UpdateWorkerComponent } from './update-worker/update-worker.component';
 import { DayoffListComponent } from './dayoff-list/dayoff-list.component';
+import { CreateDayoffComponent } from './create-dayoff/create-dayoff.component';
+import { DayoffFormComponent } from './dayoff-form/dayoff-form.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { DayoffListComponent } from './dayoff-list/dayoff-list.component';
     WorkerFormComponent,
     UpdateWorkerComponent,
     DayoffListComponent,
+    CreateDayoffComponent,
+    DayoffFormComponent,
+  
   ],
   imports: [
     HttpClientModule,

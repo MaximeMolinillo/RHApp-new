@@ -19,12 +19,15 @@
         <th>{{ worker.date }}</th>
         <th>{{ worker.type }}</th>
         <th>{{ worker.Fonction.nom }}</th>
-        <th> <button (click)="goToWorker(worker.id)">Modification</button> </th>
-        <th> <button (click)="deleteWorker(worker.id)">Supprimer</button> </th>
+        <th><button (click)="goToWorker(worker.id)">Modification</button></th>
+        <th><button (click)="deleteWorker(worker.id)">Supprimer</button></th>
       </tr>
     </tbody>
   </table>
 </div>
 <div>
-  <a href="/newworker">Enregistrer un nouveau salarié</a>
+  <p>&emsp;</p>
+  <button><a href="/newworker">Enregistrer un nouveau salarié</a></button>
+  <p>&emsp;</p>
+  <button><a href="/conges">voir les congées</a></button>
 </div>

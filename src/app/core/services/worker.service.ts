@@ -41,7 +41,7 @@ export class WorkerService {
 
     // Travailleur par ID
     getWorkerById(workerId: number): Observable<any> {
-        return this.http.get<any>(`http://localhost:3000/api/personne/${workerId}` , httpOptions);
+        return this.http.get<any>(`http://localhost:3000/api/personne/${workerId}`, httpOptions);
     }
 
 }
