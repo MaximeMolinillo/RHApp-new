@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #d8ddf5;
+}
+
+button{
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #5d5dec;
+    box-shadow: 5px 5px 10px #0e0edf;
+    background-color: #d8ddf5;
+    &:hover{
+        background-color: #5d5dec;
+        color: white;
+    }
+}
+a{
+    color: black;
+    &:hover{
+        color: white;
+    }
+}
+
+.entete{
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+h2, h3{
+    color: #5d5dec;
+    text-shadow: 2px 2px 10px black;
+    text-transform: uppercase;
+    text-align: center;
+}
+.btn2 {
+    display: flex;
+    margin-right: 35%;
+    margin-left: 35%;
+    margin-top: 5%;
+    
+    
+}
+
+table{
+    margin: 5px;
+    background-color: #a3a3e8;
+}
+label{
+    color: #0e0edf;
+}
+.card-panel{
+    background-color: #a3a3e8;
+}

@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         etat: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false
         }
         

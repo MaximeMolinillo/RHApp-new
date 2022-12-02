@@ -1,7 +1,7 @@
 <div class="worker-list">
   <h2>Liste des congées</h2>
   <table>
-    <thead>
+    <thead class="entete">
       <tr>
         <th>Date de départ</th>
         <th>Date de retour</th>
@@ -16,16 +16,16 @@
         <th>{{ dayoff.fin }}</th>
         <th>{{ dayoff.duree }}</th>
         <th>{{ dayoff.Personne.nom }} {{ dayoff.Personne.prenom }}</th>
-        <th>{{ dayoff.etat }}</th>
+        <th>{{ dayoff.etat === true ? "accepté" : "refusé"  }}</th>
 
-        <th><button (click)="goToValid(dayoff.id)">Validation</button></th>
+        <th><button (click)="goToValid(dayoff.id, dayoff.Personne.nom)"*ngIf="dayoff.etat == false">Validation </button></th>
 
-        <th><button (click)="goToInvalid(dayoff.id)">Refus</button></th>
+        <th><button (click)="goToInvalid(dayoff.id)"*ngIf="dayoff.etat == true">Refus</button></th>
       </tr>
     </tbody>
   </table>
 </div>
 <div>
   <p>&emsp;</p> 
-  <button><a href="/newdayoff">Enregistrer un nouveau congés</a></button>
+  <button class="btn2"><a href="/newdayoff">Enregistrer un nouveau congés</a></button>
 </div>

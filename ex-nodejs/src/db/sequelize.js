@@ -6,19 +6,19 @@ const congesModel = require('../models/conges.model');
 
 // exemple
 let personnes = [
-    { id: 1, prenom: "louis", nom: "Defunes", sexe: "homme", date: "25/01/1972", type: "non", identifiant: "loulou59", motDePasse: "loulou5959", job: 1 },
-    { id: 2, prenom: "jack", nom: "roussel", sexe: "homme", date: "05/11/1995", type: "oui", identifiant: "jackiejackie", motDePasse: "jacklamenace", job: 2 },
-    { id: 3, prenom: "eva", nom: "naiceansse", sexe: "femme", date: "21/05/1999", type: "non", identifiant: "evanaiceansse", motDePasse: "rameneMoiAlaVi", job: 1 },
+    {  prenom: "louis", nom: "Defunes", sexe: "homme", date: "25/01/1972", type: "non", identifiant: "loulou59", motDePasse: "loulou5959", job: 1 },
+    {  prenom: "jack", nom: "roussel", sexe: "homme", date: "05/11/1995", type: "oui", identifiant: "jackiejackie", motDePasse: "jacklamenace", job: 2 },
+    {  prenom: "eva", nom: "naiceansse", sexe: "femme", date: "21/05/1999", type: "non", identifiant: "evanaiceansse", motDePasse: "rameneMoiAlaVi", job: 1 },
 ];
 let fonctions = [
-    { id: 1, nom: "dev", commentaire: "dev" },
-    { id: 2, nom: "rh", commentaire: "rh" },
+    {  nom: "dev", commentaire: "dev" },
+    {  nom: "rh", commentaire: "rh" },
 ];
 
 let conges = [
-    { id: 1, debut: "15/10/2022", fin: "25/10/2022", duree: 10, etat: "validé", personne: 2 },
-    { id: 2, debut: "02/01/2022", fin: "02/10/2022", duree: 270, etat: "validé", personne: 3 },
-    { id: 3, debut: "02/01/2022", fin: "02/10/2022", duree: 270, etat: "validé", personne: 1 }
+    {  debut: "15/10/2022", fin: "25/10/2022", duree: 10, etat: false, personne: 2 },
+    {  debut: "02/01/2022", fin: "02/10/2022", duree: 270, etat: false, personne: 3 },
+    {  debut: "02/01/2022", fin: "02/10/2022", duree: 270, etat: false, personne: 1 }
 ];
 
 const sequelize = new Sequelize(

@@ -36,8 +36,8 @@ export class DayOffService {
         return this.http.put(`http://localhost:3000/api/conges/${personne}`, dayoff, httpOptions);
     }
 
-       // Travailleur par ID
-       getDayoffById(dayofId: number): Observable<any> {
+    // Travailleur par ID
+    getDayoffById(dayofId: number): Observable<any> {
         return this.http.get<any>(`http://localhost:3000/api/personne/${dayofId}`, httpOptions);
     }
 

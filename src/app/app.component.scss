@@ -1,0 +1,17 @@
+button{
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #5d5dec;
+    box-shadow: 5px 5px 10px #0e0edf;
+    &:hover{
+        background-color: #5d5dec;
+        color: white;
+    }
+}
+a{
+    color: black;
+    &:hover{
+        color: white;
+    }
+}

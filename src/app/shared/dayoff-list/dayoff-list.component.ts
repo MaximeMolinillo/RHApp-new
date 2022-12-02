@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 import { DayOffService } from '../../core/services/day-off.service';
 
 @Component({
@@ -25,8 +26,15 @@ export class DayoffListComponent {
       });
       
   }
-  goToValid(dayoff: any) {
+  goToValid(dayoff: any, personne: any) {
     this.router.navigate(['validdayoff', dayoff]);
+    this.dayoffService.updateDayoff(dayoff, personne).pipe(
+      map(dayoff => ({
+        ...dayoff, 
+        etat: dayoff.etat === true ? false : true
+      }))
+    )
+
   }
 
   goToInvalid(dayoff: any) {

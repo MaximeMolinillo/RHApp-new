@@ -28,11 +28,14 @@ export class WorkerListComponent {
   }
 
   deleteWorker(workerId: number) {
+    if(confirm("confirmation suppresion")){
     this.workerService.deleteWorker(workerId).subscribe(() => {
       // this.router.navigate(['worker']);
       location.reload();
+   
     })
   }
+}
 }
 
 
