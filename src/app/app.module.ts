@@ -3,32 +3,23 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
-import { PageNotFoundCommponent } from './page-not-found/page-not-found.component';
 import { RhModule } from './rh/rh.module';
-import { CreateWorkerComponent } from './create-worker/create-worker.component';
-import { WorkerFormComponent } from './worker-form/worker-form.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { UpdateWorkerComponent } from './update-worker/update-worker.component';
-import { DayoffListComponent } from './dayoff-list/dayoff-list.component';
-import { CreateDayoffComponent } from './create-dayoff/create-dayoff.component';
-import { DayoffFormComponent } from './dayoff-form/dayoff-form.component';
+import { CreateDayoffComponent } from './worker/create-dayoff/create-dayoff.component';
+import { DayoffFormComponent } from './worker/dayoff-form/dayoff-form.component';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundCommponent,
     AuthComponent,
-    CreateWorkerComponent,
-    WorkerFormComponent,
-    UpdateWorkerComponent,
-    DayoffListComponent,
     CreateDayoffComponent,
     DayoffFormComponent,
-  
   ],
   imports: [
     HttpClientModule,
@@ -36,6 +27,8 @@ import { DayoffFormComponent } from './dayoff-form/dayoff-form.component';
     FormsModule,
     RouterModule,
     RhModule,
+    CoreModule,
+    SharedModule,
     AppRoutingModule
   ],
   exports: [],

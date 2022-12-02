@@ -26,10 +26,11 @@ router.get('/conges/:id', (req,res) => {
 })
 
 router.post('/conges', (req,res) => {
+    console.log(req.body);
     sequelize.congesList.create(req.body).then(resultat => {
         res.json({ message: "Création réalisée avec succés", resultat })
-    }).catch(() => {
-        res.json({ message: "Erreur !!" })
+    }).catch((erreur) => {
+        res.json({ message: erreur })
     })
 
 })
