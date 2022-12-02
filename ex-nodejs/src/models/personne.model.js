@@ -31,11 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         motDePasse:{
             type: DataTypes.STRING,
-            allowNull:false
-        },
-        job:{
-            type: DataTypes.INTEGER,
-            primaryKey: true,  
+            // allowNull:false
         }
 
     })

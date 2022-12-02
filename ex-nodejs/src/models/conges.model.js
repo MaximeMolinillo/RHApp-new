@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         etat: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }
         
     })
 }

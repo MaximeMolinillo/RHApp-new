@@ -1,0 +1,89 @@
+<form *ngIf="worker" (ngSubmit)="onSubmit()" #participantForm="ngForm">
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card-panel">
+                <!-- Nom -->
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" required pattern="[a-zA-Z ]*" [(ngModel)]="worker.nom"
+                        #nom="ngModel" name="nom">
+                </div>
+                <div [hidden]="nom.valid || nom.pristine" class="card-panel red accent-1">
+                    Nom erroné ou vide
+                </div>
+
+                <!-- Prenom -->
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" class="form-control" required [(ngModel)]="worker.prenom" #prenom="ngModel"
+                        name="prenom" pattern="[a-zA-Z ]*">
+                </div>
+                <div [hidden]="prenom.valid || prenom.pristine" class="card-panel red accent-1">
+                    Prenom erroné ou vide
+                </div>
+
+
+                <!-- Sexe -->
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="sexe">Sexe</label>
+                        <input type="text" class="form-control" required [(ngModel)]="worker.sexe" #sexe="ngModel"
+                            name="sexe" pattern="[a-zA-Z ]*">
+                    </div>
+                    <div [hidden]="sexe.valid || sexe.pristine" class="card-panel red accent-1">
+                        Sexe erroné ou vide
+                    </div>
+                </div>
+
+                <!-- Date de naissance -->
+                <div class="form-group">
+                    <label for="date">Date de naissance</label>
+                    <input type="date" class="form-control" 
+                        [(ngModel)]="worker.date" #date="ngModel" name="date">
+                </div>
+                <div [hidden]="date.valid || date.pristine" class="card-panel red accent-1">
+                    Date de naissance erroné
+                </div>
+
+                <!-- Identifiant -->
+                <div class="form-group">
+                    <label for="identifiant">Identifiant</label>
+                    <input type="text" class="form-control" 
+                        [(ngModel)]="worker.identifiant" #identifiant="ngModel" name="identifiant">
+                </div>
+                <div [hidden]="identifiant.valid || identifiant.pristine" class="card-panel red accent-1">
+                    Identifiant erroné
+                </div>
+
+                <!-- Type -->
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input type="text" class="form-control" pattern="[a-zA-Z ]*"
+                        [(ngModel)]="worker.type" #type="ngModel" name="type">
+                </div>
+                <div [hidden]="type.valid || type.pristine" class="card-panel red accent-1">
+                    Type erroné
+                </div>
+
+                <!-- JOb -->
+                <div class="form-group">
+                    <label for="job">Job</label>
+                    <input type="number" class="form-control" pattern="[1-9 ]*"
+                        [(ngModel)]="worker.job" #job="ngModel" name="job">
+                </div>
+                <div [hidden]="job.valid || job.pristine" class="card-panel red accent-1">
+                    Job erroné
+                </div>
+
+                <!-- Submit button -->
+                <div class="divider"></div>
+                <div class="section center">
+                    <button type="submit" class="waves-effect waves-light btn" [disabled]="!participantForm.form.valid">
+                        Valider</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+<h3 *ngIf="!worker" class="center">Aucun salarié à modifier...</h3>

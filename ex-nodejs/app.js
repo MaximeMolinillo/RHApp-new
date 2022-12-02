@@ -3,12 +3,17 @@ const sequelize = require('./src/db/sequelize');
 
 const personnesApi=require('./src/services/personne')
 const fonctionsApi=require('./src/services/fonction')
-
+const congesApi=require('./src/services/conges')
+const basicAuth = require('./src/basicauth')
 const cors = require('cors')
 const app = express();
+
+
 const port = 3000;
+// 
 
 app.use(cors())
+app.use(basicAuth);
 sequelize.connect();
 sequelize.initDb();
 
@@ -23,6 +28,7 @@ app.get('/test/:id', (req,res) => {
 
 app.use('/api',personnesApi)
 app.use('/api',fonctionsApi)
+app.use('/api',congesApi)
 
 
 

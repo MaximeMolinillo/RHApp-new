@@ -7,7 +7,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent  {
   password!: string  ;
   username!: string;
   message: string = 'Déconnecté';
@@ -23,18 +23,28 @@ export class AuthComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
 
-  login() {
-    const isLogged = this.autSrv.login(this.username, this.password);
-    if (isLogged) {
-      this.router.navigate(['worker']);
+  async login() {
+console.log();
 
-    } else {
-      this.message = 'Utilisateur ou mot de passe incorect';
-    }
+    await (await (this.autSrv.login({ username: this.username, password: this.password }))).subscribe(isLoged => {
+
+      if(isLoged === true){
+        this.router.navigate(['worker']);  
+      } else {
+        this.message ='Utilisateur ou mot de passe incorrect';
+      }   
+  });
+    // const isLogged = this.autSrv.login(this.username, this.password);
+    // if (isLogged) {
+    //   this.router.navigate(['worker']);
+
+    // } else {
+    //   this.message = 'Utilisateur ou mot de passe incorect';
+    // }
   }
 
 

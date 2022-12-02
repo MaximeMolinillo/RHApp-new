@@ -1,10 +1,11 @@
 export class DayOff {
-    constructor(
-        public id: number,
-        public start: Date,
-        public end: Date,
-        public numberOfDays: number,
-        public worker: number,
-        public state: string
-    ){}
+    // constructor(
+    id: number | undefined;
+    start: Date | undefined;
+    end: Date | undefined;
+    numberOfDays: number | undefined;
+    worker: number | undefined;
+    state: string | undefined;
+    personne: object| undefined;
+    // ){}
 }

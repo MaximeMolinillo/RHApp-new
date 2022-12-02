@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Worker } from 'src/app/core/models/worker.model';
+import { Router } from '@angular/router';
+// import { Observable } from 'rxjs';
+// import { Worker } from 'src/app/core/models/worker.model';
 import { WorkerService } from 'src/app/core/services/worker.service';
 
 @Component({
@@ -10,13 +11,28 @@ import { WorkerService } from 'src/app/core/services/worker.service';
 })
 export class WorkerListComponent {
 
-  workers$!: Observable<Worker[]>
+  workers$: any[]=[]
 
   constructor(
-    private workerService: WorkerService
+    private workerService: WorkerService,
+    private router: Router,
   ){}
 
   ngOnInit(): void {
-    this.workers$ = this.workerService.getWorkerList();
+   this.workerService.getWorkerList().subscribe(resultat=> {this.workers$= resultat});
+   // console.log(this.workers$!);
+  }
+
+  goToWorker(worker: any) {
+    this.router.navigate(['updateworker', worker]);
+  }
+
+  deleteWorker(workerId: number) {
+    this.workerService.deleteWorker(workerId).subscribe(() => {
+      // this.router.navigate(['worker']);
+      location.reload();
+    })
   }
 }
+
+

@@ -1,0 +1,30 @@
+<div class="worker-list">
+  <h2>Liste des employés</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date de départ</th>
+        <th>Date de retour</th>
+        <th>Nombre de jour</th>
+        <th>Salarié</th>
+        <th>Etat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dayoff of dayoff$">
+        <th>{{ dayoff.debut }}</th>
+        <th>{{ dayoff.fin }}</th>
+        <th>{{ dayoff.duree }}</th>
+        <th>{{ dayoff.Personne.nom }} {{dayoff.Personne.prenom}}</th>
+        <th>{{ dayoff.etat }}</th>
+
+         <th> <button (click)="goToValid(dayoff.id)">Validation</button> </th>
+          
+          <th> <button (click)="goToInvalid(dayoff.id)">Refus</button> </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <a href="/newdayoff">Enregistrer un nouveau congés</a>
+</div>

@@ -1,12 +1,12 @@
 export class Worker {
-    constructor(
-        public id: number,
-        public nom: string,
-        public prenom: string,
-        public sexe: string,
-        public date: Date,
-        public identifiant: string,
-        public type: string,
-        public job: string,
-    ){}
+    // constructor(
+    id: number | undefined;
+    nom: string | undefined;
+    prenom: string | undefined;
+    sexe: string | undefined;
+    date: Date | undefined;
+    identifiant: string | undefined;
+    type: string | undefined;
+    job: number | undefined;
+    // ){}
 }
